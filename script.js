@@ -1,12 +1,18 @@
 document.getElementById("uploadBtn").addEventListener("click", () => {
-    document.getElementById("status").innerText =
-        "🚀 자동 업로드 준비 중... (지 실장 업로드 API 연결 필요)";
-});
+    const video = document.getElementById("videoFile").files[0];
+    const title = document.getElementById("titleInput").value;
+    const desc = document.getElementById("descInput").value;
 
-document.getElementById("autoShortBtn").addEventListener("click", () => {
-    alert("🔄 쇼츠 자동 생성 엔진 연결 예정 (준비 단계)");
-});
+    if (!video) {
+        alert("영상 파일을 선택해주세요!");
+        return;
+    }
 
-document.getElementById("quizBtn").addEventListener("click", () => {
-    alert("🧠 퀴즈 자동 생성 모듈 연결 예정");
+    if (!title) {
+        alert("제목을 입력해주세요!");
+        return;
+    }
+
+    document.getElementById("resultBox").innerHTML =
+        "⚠️ 현재 데모 버전입니다.<br>실제 유튜브 자동 업로드는 서버 연결 후 활성화됩니다.";
 });
