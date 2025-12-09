@@ -1,88 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RS-TV 유튜브 자동 업로드 도구</title>
-<style>
-body {
-font-family: Arial, sans-serif;
-background: #f5f5f5;
-padding: 20px;
-}
-.container {
-max-width: 900px;
-margin: auto;
-background: white;
-padding: 30px;
-border-radius: 10px;
-box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-h1 {
-text-align: center;
-margin-bottom: 30px;
-}
-label {
-font-weight: bold;
-display: block;
-margin-top: 20px;
-}
-input, textarea, button {
-width: 100%;
-padding: 12px;
-margin-top: 8px;
-border-radius: 6px;
-border: 1px solid #ccc;
-font-size: 16px;
-}
-button {
-background: #0077ff;
-color: white;
-border: none;
-cursor: pointer;
-margin-top: 25px;
-}
-button:hover {
-background: #005fcc;
-}
-.note-text {
-font-size: 14px;
-color: #666;
-margin-top: 5px;
-}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube 자동 업로드 패널</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<div class="container">
-<h1>RS-TV 자동 업로드 폼</h1>
 
+    <header>
+        <h1>RS-TV 유튜브 자동 업로드 시스템</h1>
+        <p>Created by 지 실장 & 오빠 💛</p>
+    </header>
 
-<label>영상 파일 업로드 (MP4)</label>
-<input type="file" accept="video/mp4" />
+    <main>
+        <section class="upload-box">
+            <h2>📤 영상 자동 업로드</h2>
+            <label>동영상 파일 선택</label>
+            <input type="file" id="videoInput" />
 
+            <label>제목 입력</label>
+            <input type="text" id="titleInput" placeholder="영상 제목을 입력하세요" />
 
-<label>제목</label>
-<input type="text" placeholder="예: 5, 6, 70대 건강 가이드 1편" />
+            <label>설명 입력</label>
+            <textarea id="descriptionInput" placeholder="영상 설명을 입력하세요"></textarea>
 
+            <button id="uploadBtn">유튜브 자동 업로드 실행</button>
 
-<label>설명 (Description)</label>
-<textarea rows="6" placeholder="영상 설명을 입력하세요."></textarea>
+            <div id="status"></div>
+        </section>
 
+        <section class="auto-create">
+            <h2>⚙️ RS-TV 쇼츠 자동 생성기</h2>
+            <button id="autoShortBtn">🔄 쇼츠 자동 생성 실행</button>
+        </section>
 
-<label>태그 (쉼표로 구분)</label>
-<input type="text" placeholder="예: 시니어, 건강, RS TV" />
+        <section class="quiz">
+            <h2>🧠 자동 퀴즈 생성</h2>
+            <button id="quizBtn">퀴즈 자동 생성</button>
+        </section>
+    </main>
 
+    <footer>
+        <p>© RS-TV / 지 실장 시스템</p>
+    </footer>
 
-<label>업로드 옵션</label>
-<select>
-<option>일반 업로드</option>
-<option>비공개 업로드</option>
-<option>예약 업로드</option>
-</select>
+    <script src="script.js"></script>
 
-
-<button onclick="alert('업로드 자동화 기능은 백엔드 연결 필요')">유튜브 자동 업로드 실행</button>
-
-
-<p class="note-text">※ 현재는 프론트 템플릿입니다. 오팔·Python API·유튜브 Data API 연결로 자동화가 완성됩니다.</p>
+</body>
 </html>
